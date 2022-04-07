@@ -41,17 +41,17 @@
         zoom: 5
       });
 	  
-	  const mujeres = new FeatureLayer({
+	  const hombres = new FeatureLayer({
 		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/MapEnvejecimiento_WFL1/FeatureServer/6",
 	    title: "Esperanza de vida a los 65 años de las mujeres en la OCDE"
 	  });
-	  map.add(mujeres);
+	  map.add(hombres); //Está cambiada la variable
 	  
-	  const hombres = new FeatureLayer({
+	  const women = new FeatureLayer({
 		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/MapEnvejecimiento_WFL1/FeatureServer/7",
 		title: "Esperanza de vida a los 65 años de los hombres en la OCDE"
 	  });
-	  map.add(hombres);
+	  map.add(women); //Está cambiada la variable
 
       const layerList = new LayerList({
 		view: view
