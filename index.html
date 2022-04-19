@@ -15,7 +15,7 @@
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.22/"></script>
-
+​
   <script>
     require([
 	  "esri/config",
@@ -24,35 +24,34 @@
 	  "esri/layers/FeatureLayer",
       "esri/widgets/ScaleBar",
       "esri/widgets/Legend",
-	  "esri/widgets/LayerList",
-
+	  "esri/widgets/LayerList"
     ], function(esriConfig, Map, MapView, FeatureLayer, ScaleBar, Legend, LayerList) {
 	
 	  esriConfig.apiKey = "AAPK563647cc6d0d4359b524c8e78537e87fXNsVKRBVmxFq1CtsilGtSJsM5LmFLxB7SUqSwZOSS_eo175yS7MF3OcNqaLQm8Lt";
-
+​
       const map = new Map({
         basemap: "streets"
       });
-
+​
       const view = new MapView({
         container: "viewDiv",
         map: map,
-        center: [12, 50],
-        zoom: 5
+        center: [8, 42],
+        zoom: 2
       });
 	  
 	  const hombres = new FeatureLayer({
-		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/MapEnvejecimiento_WFL1/FeatureServer/6",
-	    title: "Esperanza de vida a los 65 años de las mujeres en la OCDE"
+		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/env_bueno_WFL1/FeatureServer/6",
+	    title: "Esperanza de vida a los 65 años de las hombres en la OCDE"
 	  });
-	  map.add(hombres); //Está cambiada la variable
+	  map.add(hombres);
 	  
-	  const women = new FeatureLayer({
-		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/MapEnvejecimiento_WFL1/FeatureServer/7",
-		title: "Esperanza de vida a los 65 años de los hombres en la OCDE"
+	  const mujeres = new FeatureLayer({
+		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/mapa7_OCDEmujeres/FeatureServer/8",
+		title: "Esperanza de vida a los 65 años de los mujeres en la OCDE"
 	  });
-	  map.add(women); //Está cambiada la variable
-
+	  map.add(mujeres);
+​
       const layerList = new LayerList({
 		view: view
       });
@@ -62,7 +61,7 @@
         view: view
       });
       view.ui.add(scalebar, "bottom-left");
-
+​
       const legend = new Legend ({
         view: view
       });
@@ -75,4 +74,3 @@
   <div id="viewDiv"></div>
 </body>
 </html>
-
