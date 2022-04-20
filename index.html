@@ -15,7 +15,6 @@
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.22/"></script>
-​
   <script>
     require([
 	  "esri/config",
@@ -28,11 +27,11 @@
     ], function(esriConfig, Map, MapView, FeatureLayer, ScaleBar, Legend, LayerList) {
 	
 	  esriConfig.apiKey = "AAPK563647cc6d0d4359b524c8e78537e87fXNsVKRBVmxFq1CtsilGtSJsM5LmFLxB7SUqSwZOSS_eo175yS7MF3OcNqaLQm8Lt";
-​
+
       const map = new Map({
         basemap: "streets"
       });
-​
+
       const view = new MapView({
         container: "viewDiv",
         map: map,
@@ -51,7 +50,7 @@
 		title: "Esperanza de vida a los 65 años de los mujeres en la OCDE"
 	  });
 	  map.add(mujeres);
-​
+
       const layerList = new LayerList({
 		view: view
       });
@@ -61,12 +60,11 @@
         view: view
       });
       view.ui.add(scalebar, "bottom-left");
-​
+
       const legend = new Legend ({
         view: view
       });
-      view.ui.add(legend, "top-right");
-	  
+      view.ui.add(legend, "top-right");	  
 	});
   </script>
 </head>
