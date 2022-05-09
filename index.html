@@ -67,24 +67,24 @@
 	  
 	  const template1 = {
         title: "<b>{País}</b>",
-        content: "Esperanza de vida de las mujeres a los 65 años: {women_years_after} años"
+        content: "Años esperados de vida después de la edad real de jubilación para las mujeres a los 65 años: {women_years_after} años"
 		};
 		
       const template2 = {
         title: "<b>{País}</b>",
-        content: "Esperanza de vida de los hombres a los 65 años: {men_years_after} años"
+        content: "Años esperados de vida después de la edad real de jubilación para los hombres a los 65 años: {men_years_after} años"
 		};
 	  
 	  const mujeres = new FeatureLayer({
 		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/Informe_envejecimiento_WFL1/FeatureServer/8",
-		title: "Esperanza de vida a los 65 años de las mujeres en la OCDE",
+		title: "Años esperados de vida después de la edad real de jubilación para las mujeres en la OCDE",
 		popupTemplate: template1
 	  });
 	  map.add(mujeres);
 	  
 	  const hombres = new FeatureLayer({
 		url: "https://services-eu1.arcgis.com/WCEIifo5j3luTcRc/arcgis/rest/services/Informe_envejecimiento_WFL1/FeatureServer/7",
-	    title: "Esperanza de vida a los 65 años de los hombres en la OCDE",
+	    title: "Años esperados de vida después de la edad real de jubilación para los hombres en la OCDE",
 		popupTemplate: template2
 	  });
 	  map.add(hombres);
